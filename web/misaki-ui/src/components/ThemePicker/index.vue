@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+// web/misaki-ui/node_modules/element-plus/package.json
 const version = new URL('element-plus/package.json',import.meta.url).version // element-plus
 const ORIGINAL_THEME = '#409EFF' // default color
 
@@ -58,7 +58,7 @@ export default {
       }
       const chalkHandler = getHandler('chalk', 'chalk-style')
       if (!this.chalk) {
-        const url = `https://unpkg.com/element-ui@${version}/lib/theme-chalk/index.css`
+        const url = `https://unpkg.com/element-plus@${version}/lib/theme-chalk/index.css`
         this.getCSSString(url, chalkHandler, 'chalk')
       } else {
         chalkHandler()

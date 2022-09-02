@@ -4,7 +4,7 @@
     <div class="message-content">
       <div v-for="item in data" :key="item.key" class="message-item">
         <div class="message-avatar">
-          <img class="avatar" :src="require('../assets/user.png')" />
+          <img class="avatar" :src="('src/assets/user.png')" />
         </div>  
         <span class="sender">
           {{ item.sender }}
@@ -30,7 +30,7 @@ export default {
       default: () => [
         {
           key: "1",
-          avatar:'@/assets/user.png',
+          avatar:'./assets/user.png',
           content:'你修改了用户密码',
           sender:'诸葛亮',
           time:'5分钟前'
