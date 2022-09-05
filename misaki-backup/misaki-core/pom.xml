@@ -27,6 +27,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+<!--		import common-->
+		<dependency>
+			<groupId>com.misaki</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+<!--			<scope>1.0.0</scope>-->
+		</dependency>
+
 	</dependencies>
 
 	<build>

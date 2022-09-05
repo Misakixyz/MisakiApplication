@@ -8,9 +8,18 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+<!--import modules admin,core,common-->
+	<modules>
+		<module>../misaki-admin</module>
+		<module>../misaki-core</module>
+		<module>../misaki-common</module>
+	</modules>
+
 	<groupId>com.misaki</groupId>
 	<artifactId>pom</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>pom</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
