@@ -1,13 +1,16 @@
 package com.misaki.core.page;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.util.ReflectionUtils;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class MybatisPageHelper {
     public static final String findPage = "findPage";
     public static PageResult findPage(PageRequest pageRequest, Object mapper, String findPage) {
-        return findPage(pageRequest, mapper, MybatisPageHelper.findPage)
+        return findPage(pageRequest, mapper, MybatisPageHelper.findPage);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -15,7 +18,7 @@ public class MybatisPageHelper {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
-        Object result = ReflectionUtils.invokeMethod(mapper, queryMethodName, args);
+        Object result = ReflectionUtils.invokeMethod((Method) mapper, queryMethodName, args);
         return getPageResult(pageRequest, new PageInfo((List) result));
     }
 
