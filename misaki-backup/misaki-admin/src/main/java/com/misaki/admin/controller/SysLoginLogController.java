@@ -1,20 +1,36 @@
 package com.misaki.admin.controller;
 
-
+import com.misaki.admin.model.SysLoginLog;
+import com.misaki.admin.service.SysLoginLogService;
+import com.misaki.core.http.HttpResult;
+import com.misaki.core.page.PageRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
- * <p>
- * 系统登陆日志 前端控制器
- * </p>
- *
+ * 登录日志控制器
  * @author Misaki
- * @since 2022-09-03
+ * @date 8 13, 2022
  */
 @RestController
-@RequestMapping("/admin/sys-login-log")
+@RequestMapping("loginlog")
 public class SysLoginLogController {
 
+	@Autowired
+	private SysLoginLogService sysLoginLogService;
+
+	@PostMapping(value="/findPage")
+	public HttpResult findPage(@RequestBody PageRequest pageRequest) {
+		return HttpResult.ok(sysLoginLogService.findPage(pageRequest));
+	}
+	
+	@PostMapping(value="/delete")
+	public HttpResult delete(@RequestBody List<SysLoginLog> records) {
+		return HttpResult.ok(sysLoginLogService.delete(records));
+	}
 }

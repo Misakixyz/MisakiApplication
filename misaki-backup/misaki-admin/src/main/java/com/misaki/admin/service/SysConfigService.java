@@ -1,16 +1,25 @@
 package com.misaki.admin.service;
 
-import com.misaki.admin.entity.SysConfig;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.misaki.admin.model.SysConfig;
+import com.misaki.core.service.CurdService;
+
+import java.util.List;
 
 /**
- * <p>
- * 系统配置表 服务类
- * </p>
- *
+ * 系统配置管理
  * @author Misaki
- * @since 2022-09-03
+ * @date 8 13, 2022
  */
-public interface SysConfigService extends IService<SysConfig> {
+public interface SysConfigService extends CurdService<SysConfig> {
 
+    int delete(SysConfig record);
+
+	SysConfig findById(Long id);
+
+	/**
+	 * 根据名称查询
+	 * @param lable
+	 * @return
+	 */
+	List<SysConfig> findByLable(String lable);
 }

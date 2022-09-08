@@ -1,20 +1,70 @@
 package com.misaki.admin.service.impl;
 
-import com.misaki.admin.entity.SysLoginLog;
-import com.misaki.admin.mapper.SysLoginLogMapper;
-import com.misaki.admin.service.SysLoginLogService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * <p>
- * 系统登陆日志 服务实现类
- * </p>
- *
- * @author Misaki
- * @since 2022-09-03
- */
-@Service
-public class SysLoginLogServiceImpl extends ServiceImpl<SysLoginLogMapper, SysLoginLog> implements SysLoginLogService {
+import com.misaki.admin.dao.SysLoginLogMapper;
+import com.misaki.admin.model.SysLoginLog;
+import com.misaki.admin.service.SysLoginLogService;
+import com.misaki.core.page.MybatisPageHelper;
+import com.misaki.core.page.PageRequest;
+import com.misaki.core.page.PageResult;
 
+@Service
+public class SysLoginLogServiceImpl  implements SysLoginLogService {
+
+	@Autowired(required = false)
+	private SysLoginLogMapper sysLoginLogMapper;
+
+	@Override
+	public int save(SysLoginLog record) {
+		if(record.getId() == null || record.getId() == 0) {
+			return sysLoginLogMapper.insertSelective(record);
+		}
+		return sysLoginLogMapper.updateByPrimaryKeySelective(record);
+	}
+
+	@Override
+	public int delete(SysLoginLog record) {
+		return sysLoginLogMapper.deleteByPrimaryKey(record.getId());
+	}
+
+	@Override
+	public int delete(List<SysLoginLog> records) {
+		for(SysLoginLog record:records) {
+			delete(record);
+		}
+		return 1;
+	}
+
+	/**
+	 * 根据ID查询
+	 *
+	 * @param id
+	 */
+	@Override
+	public SysLoginLog findByID(Long id) {
+		return null;
+	}
+
+	@Override
+	public SysLoginLog findById(Long id) {
+		return sysLoginLogMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public PageResult findPage(PageRequest pageRequest) {
+		Object userName = pageRequest.getParam("userName");
+		if(userName != null) {
+			return MybatisPageHelper.findPage(pageRequest, sysLoginLogMapper, "findPageByUserName", userName);
+		}
+		Object status = pageRequest.getParam("status");
+		if(status != null) {
+			return MybatisPageHelper.findPage(pageRequest, sysLoginLogMapper, "findPageByStatus", status);
+		}
+		return MybatisPageHelper.findPage(pageRequest, sysLoginLogMapper);
+	}
+	
 }

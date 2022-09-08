@@ -1,20 +1,38 @@
 package com.misaki.admin.controller;
 
+import com.misaki.admin.model.SysDept;
+import com.misaki.admin.service.SysDeptService;
+import com.misaki.core.http.HttpResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 /**
- * <p>
- * 机构管理 前端控制器
- * </p>
- *
+ * 机构控制器
  * @author Misaki
- * @since 2022-09-03
+ * @date 8 13, 2022
  */
 @RestController
-@RequestMapping("/admin/sys-dept")
+@RequestMapping("dept")
 public class SysDeptController {
+
+	@Autowired
+	private SysDeptService sysDeptService;
+	
+	@PostMapping(value="/save")
+	public HttpResult save(@RequestBody SysDept record) {
+		return HttpResult.ok(sysDeptService.save(record));
+	}
+
+	@PostMapping(value="/delete")
+	public HttpResult delete(@RequestBody List<SysDept> records) {
+		return HttpResult.ok(sysDeptService.delete(records));
+	}
+
+	@GetMapping(value="/findTree")
+	public HttpResult findTree() {
+		return HttpResult.ok(sysDeptService.findTree());
+	}
 
 }

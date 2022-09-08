@@ -6,23 +6,27 @@ public class MisakiException {
     private int code = 500;
 
     public MisakiException(String msg) {
-        super(msg);
+//        super(msg);
+        super();
         this.msg = msg;
     }
 
     public MisakiException(String msg, Throwable e) {
-        super(msg, e);
+//        super(msg, e);
+        super();
         this.msg = msg;
     }
 
     public MisakiException(String msg, int code) {
-        super(msg);
+//        super(msg);
+        super();
         this.msg = msg;
         this.code = code;
     }
 
     public MisakiException(String msg, int code, Throwable e) {
-        super(msg, e);
+//        super(msg, e);
+        super();
         this.msg = msg;
         this.code = code;
     }

@@ -1,16 +1,25 @@
 package com.misaki.admin.service;
 
-import com.misaki.admin.entity.SysDept;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.misaki.admin.model.SysDept;
+import com.misaki.core.service.CurdService;
+
+import java.util.List;
 
 /**
- * <p>
- * 机构管理 服务类
- * </p>
- *
+ * 机构管理
  * @author Misaki
- * @since 2022-09-03
+ * @date 8 13, 2022
  */
-public interface SysDeptService extends IService<SysDept> {
+public interface SysDeptService extends CurdService<SysDept> {
 
+    int delete(SysDept record);
+
+	SysDept findById(Long id);
+
+	/**
+	 * 查询机构树
+	 * @param userId 
+	 * @return
+	 */
+	List<SysDept> findTree();
 }

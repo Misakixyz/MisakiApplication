@@ -1,16 +1,16 @@
 package com.misaki.admin.service;
 
-import com.misaki.admin.entity.SysLoginLog;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.misaki.admin.model.SysLoginLog;
+import com.misaki.core.service.CurdService;
 
 /**
- * <p>
- * 系统登陆日志 服务类
- * </p>
- *
+ * 登录日志
  * @author Misaki
- * @since 2022-09-03
+ * @date 8 13, 2022
  */
-public interface SysLoginLogService extends IService<SysLoginLog> {
+public interface SysLoginLogService extends CurdService<SysLoginLog> {
 
+    int delete(SysLoginLog record);
+
+    SysLoginLog findById(Long id);
 }

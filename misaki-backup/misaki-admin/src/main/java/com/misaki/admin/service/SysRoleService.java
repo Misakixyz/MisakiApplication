@@ -1,16 +1,47 @@
 package com.misaki.admin.service;
 
-import com.misaki.admin.entity.SysRole;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.misaki.admin.model.SysMenu;
+import com.misaki.admin.model.SysRole;
+import com.misaki.admin.model.SysRoleMenu;
+import com.misaki.core.service.CurdService;
+
+import java.util.List;
 
 /**
- * <p>
- * 角色管理 服务类
- * </p>
- *
+ * 角色管理
  * @author Misaki
- * @since 2022-09-03
+ * @date 8 13, 2022
  */
-public interface SysRoleService extends IService<SysRole> {
+public interface SysRoleService extends CurdService<SysRole> {
+
+    int delete(SysRole record);
+
+	SysRole findById(Long id);
+
+	/**
+	 * 查询全部
+	 * @return
+	 */
+	List<SysRole> findAll();
+
+	/**
+	 * 查询角色菜单集合
+	 * @return
+	 */
+	List<SysMenu> findRoleMenus(Long roleId);
+
+	/**
+	 * 保存角色菜单
+	 * @param records
+	 * @return
+	 */
+	int saveRoleMenus(List<SysRoleMenu> records);
+
+	/**
+	 * 根据名称查询
+	 * @param name
+	 * @return
+	 */
+	List<SysRole> findByName(String name);
 
 }

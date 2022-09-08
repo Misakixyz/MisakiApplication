@@ -1,16 +1,25 @@
 package com.misaki.admin.service;
 
-import com.misaki.admin.entity.SysDict;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.misaki.admin.model.SysDict;
+import com.misaki.core.service.CurdService;
+
+import java.util.List;
 
 /**
- * <p>
- * 字典表 服务类
- * </p>
- *
+ * 字典管理
  * @author Misaki
- * @since 2022-09-03
+ * @date 8 13, 2022
  */
-public interface SysDictService extends IService<SysDict> {
+public interface SysDictService extends CurdService<SysDict> {
 
+	int delete(SysDict record);
+
+	SysDict findById(Long id);
+
+    /**
+	 * 根据名称查询
+	 * @param lable
+	 * @return
+	 */
+	List<SysDict> findByLable(String lable);
 }
