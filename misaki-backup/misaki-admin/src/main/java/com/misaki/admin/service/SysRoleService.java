@@ -14,10 +14,6 @@ import java.util.List;
  */
 public interface SysRoleService extends CurdService<SysRole> {
 
-    int delete(SysRole record);
-
-	SysRole findById(Long id);
-
 	/**
 	 * 查询全部
 	 * @return
@@ -44,4 +40,5 @@ public interface SysRoleService extends CurdService<SysRole> {
 	 */
 	List<SysRole> findByName(String name);
 
+	SysRole findById(Long id);
 }

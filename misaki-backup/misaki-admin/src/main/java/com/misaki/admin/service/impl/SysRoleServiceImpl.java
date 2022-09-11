@@ -1,11 +1,5 @@
 package com.misaki.admin.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.misaki.admin.constant.SysConstants;
 import com.misaki.admin.dao.SysMenuMapper;
 import com.misaki.admin.dao.SysRoleMapper;
@@ -17,6 +11,11 @@ import com.misaki.admin.service.SysRoleService;
 import com.misaki.core.page.MybatisPageHelper;
 import com.misaki.core.page.PageRequest;
 import com.misaki.core.page.PageResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class SysRoleServiceImpl  implements SysRoleService {
@@ -36,7 +35,6 @@ public class SysRoleServiceImpl  implements SysRoleService {
 		return sysRoleMapper.updateByPrimaryKeySelective(record);
 	}
 
-	@Override
 	public int delete(SysRole record) {
 		return sysRoleMapper.deleteByPrimaryKey(record.getId());
 	}
@@ -54,7 +52,6 @@ public class SysRoleServiceImpl  implements SysRoleService {
 		return null;
 	}
 
-	@Override
 	public SysRole findById(Long id) {
 		return sysRoleMapper.selectByPrimaryKey(id);
 	}

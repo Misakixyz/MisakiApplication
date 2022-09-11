@@ -1,11 +1,5 @@
 package com.misaki.admin.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.misaki.admin.constant.SysConstants;
 import com.misaki.admin.dao.SysMenuMapper;
 import com.misaki.admin.model.SysMenu;
@@ -13,6 +7,11 @@ import com.misaki.admin.service.SysMenuService;
 import com.misaki.core.page.MybatisPageHelper;
 import com.misaki.core.page.PageRequest;
 import com.misaki.core.page.PageResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class SysMenuServiceImpl implements SysMenuService {
@@ -31,7 +30,6 @@ public class SysMenuServiceImpl implements SysMenuService {
 		return sysMenuMapper.updateByPrimaryKeySelective(record);
 	}
 
-	@Override
 	public int delete(SysMenu record) {
 		return sysMenuMapper.deleteByPrimaryKey(record.getId());
 	}
@@ -54,7 +52,6 @@ public class SysMenuServiceImpl implements SysMenuService {
 		return null;
 	}
 
-	@Override
 	public SysMenu findById(Long id) {
 		return sysMenuMapper.selectByPrimaryKey(id);
 	}

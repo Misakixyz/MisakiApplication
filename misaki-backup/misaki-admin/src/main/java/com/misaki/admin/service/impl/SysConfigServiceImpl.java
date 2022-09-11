@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class SysConfigServiceImpl  implements SysConfigService {
 
-	@Autowired(required = false)
+	@Autowired
 	private SysConfigMapper sysConfigMapper;
 
 	@Override
@@ -25,7 +25,6 @@ public class SysConfigServiceImpl  implements SysConfigService {
 		return sysConfigMapper.updateByPrimaryKeySelective(record);
 	}
 
-	@Override
 	public int delete(SysConfig record) {
 		return sysConfigMapper.deleteByPrimaryKey(record.getId());
 	}

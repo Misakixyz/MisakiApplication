@@ -1,5 +1,6 @@
 package com.misaki.admin.util;
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 /**
@@ -29,15 +30,13 @@ public class PasswordEncoder {
 
 	/**
 	 * 密码加密
-	 * @param rawPass
-	 * @return
 	 */
 	public String encode(String rawPass) {
 		String result = null;
 		try {
 			MessageDigest md = MessageDigest.getInstance(algorithm);
 			// 加密后的字符串
-			result = byteArrayToHexString(md.digest(mergePasswordAndSalt(rawPass).getBytes("utf-8")));
+			result = byteArrayToHexString(md.digest(mergePasswordAndSalt(rawPass).getBytes(StandardCharsets.UTF_8)));
 		} catch (Exception ex) {
 		}
 		return result;
@@ -47,7 +46,6 @@ public class PasswordEncoder {
 	 * 密码匹配验证
 	 * @param encPass 密文
 	 * @param rawPass 明文
-	 * @return
 	 */
 	public boolean matches(String encPass, String rawPass) {
 		String pass1 = "" + encPass;

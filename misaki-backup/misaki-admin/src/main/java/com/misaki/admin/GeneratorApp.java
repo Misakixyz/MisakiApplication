@@ -26,7 +26,7 @@ public class GeneratorApp {
         tables.add("sys_login_log");
 
 
-        FastAutoGenerator.create("jdbc:mysql://localhost:3306/testDB?serverTimezone=Asia/Shanghai","root","mb1099249596")
+        FastAutoGenerator.create("jdbc:mysql://localhost:3306/testDB?serverTimezone=Asia/Shanghai","root","123456")
                 .globalConfig(builder -> {
                     builder.author("Misaki")               //作者
                             .outputDir(System.getProperty("user.dir")+"/src/main/java")    //输出路径(写到java目录)

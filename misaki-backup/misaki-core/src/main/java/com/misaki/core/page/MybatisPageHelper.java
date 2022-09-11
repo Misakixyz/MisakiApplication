@@ -2,9 +2,8 @@ package com.misaki.core.page;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.util.ReflectionUtils;
+import com.misaki.common.utils.ReflectionUtils;
 
-import java.lang.reflect.Method;
 import java.util.List;
 
 public class MybatisPageHelper {
@@ -14,7 +13,6 @@ public class MybatisPageHelper {
      * 分页查询, 约定查询方法名为 “findPage”
      * @param pageRequest 分页请求
      * @param mapper Dao对象，MyBatis的 Mapper
-     * @param args 方法参数
      * @return
      */
     public static PageResult findPage(PageRequest pageRequest, Object mapper) {
@@ -36,14 +34,14 @@ public class MybatisPageHelper {
         int pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
         // 利用反射调用查询方法
-        Object result = ReflectionUtils.invokeMethod((Method) mapper, queryMethodName, args);
+        Object result = ReflectionUtils.invoke(mapper, queryMethodName, args);
         return getPageResult(pageRequest, new PageInfo((List) result));
     }
 
     /**
      * 将分页信息封装到统一的接口
      * @param pageRequest
-     * @param page
+     * @param pageInfo
      * @return
      */
     private static PageResult getPageResult(PageRequest pageRequest, PageInfo<?> pageInfo) {

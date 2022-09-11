@@ -12,9 +12,6 @@ import java.util.List;
  */
 public interface SysDictService extends CurdService<SysDict> {
 
-	int delete(SysDict record);
-
-	SysDict findById(Long id);
 
     /**
 	 * 根据名称查询

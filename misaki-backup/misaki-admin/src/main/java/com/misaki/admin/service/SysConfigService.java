@@ -12,7 +12,6 @@ import java.util.List;
  */
 public interface SysConfigService extends CurdService<SysConfig> {
 
-    int delete(SysConfig record);
 
 	SysConfig findById(Long id);
 

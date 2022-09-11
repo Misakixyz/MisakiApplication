@@ -10,8 +10,6 @@ public class DateTimeUtils {
 	
 	/**
 	 * 获取当前标准格式化日期时间
-	 * @param date
-	 * @return
 	 */
 	public static String getDateTime() {
 		return getDateTime(new Date());
@@ -19,8 +17,6 @@ public class DateTimeUtils {
 	
 	/**
 	 * 标准格式化日期时间
-	 * @param date
-	 * @return
 	 */
 	public static String getDateTime(Date date) {
 		return (new SimpleDateFormat(DATE_FORMAT)).format(date);

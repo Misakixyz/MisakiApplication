@@ -1,21 +1,20 @@
 package com.misaki.admin.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.misaki.admin.dao.SysDictMapper;
 import com.misaki.admin.model.SysDict;
 import com.misaki.admin.service.SysDictService;
 import com.misaki.core.page.MybatisPageHelper;
 import com.misaki.core.page.PageRequest;
 import com.misaki.core.page.PageResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SysDictServiceImpl  implements SysDictService {
 
-	@Autowired(required = false)
+	@Autowired
 	private SysDictMapper sysDictMapper;
 
 	@Override
@@ -26,7 +25,6 @@ public class SysDictServiceImpl  implements SysDictService {
 		return sysDictMapper.updateByPrimaryKeySelective(record);
 	}
 
-	@Override
 	public int delete(SysDict record) {
 		return sysDictMapper.deleteByPrimaryKey(record.getId());
 	}
@@ -49,7 +47,6 @@ public class SysDictServiceImpl  implements SysDictService {
 		return null;
 	}
 
-	@Override
 	public SysDict findById(Long id) {
 		return sysDictMapper.selectByPrimaryKey(id);
 	}

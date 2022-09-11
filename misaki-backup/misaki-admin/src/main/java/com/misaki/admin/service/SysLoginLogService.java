@@ -10,7 +10,4 @@ import com.misaki.core.service.CurdService;
  */
 public interface SysLoginLogService extends CurdService<SysLoginLog> {
 
-    int delete(SysLoginLog record);
-
-    SysLoginLog findById(Long id);
 }

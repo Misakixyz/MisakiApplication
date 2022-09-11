@@ -9,11 +9,11 @@ import java.util.Date;
  */
 public class BaseModel {
 
-	private Long id;
+	private Long id = Long.valueOf(1);
 	
-    private String createBy;
+    private String createBy = String.valueOf(1);
 
-    private Date createTime;
+    private Date createTime ;
 
     private String lastUpdateBy;
 

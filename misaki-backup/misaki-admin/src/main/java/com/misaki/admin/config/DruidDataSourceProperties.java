@@ -1,12 +1,14 @@
 package com.misaki.admin.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * 数据源属性
  * @author Misaki
  * @date 8 12, 2022
  */
+@Component
 @ConfigurationProperties(prefix = "spring.datasource.druid")
 public class DruidDataSourceProperties {
 

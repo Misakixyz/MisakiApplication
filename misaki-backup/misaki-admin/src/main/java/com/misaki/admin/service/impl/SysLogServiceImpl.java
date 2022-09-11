@@ -1,16 +1,15 @@
 package com.misaki.admin.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.misaki.admin.dao.SysLogMapper;
 import com.misaki.admin.model.SysLog;
 import com.misaki.admin.service.SysLogService;
 import com.misaki.core.page.MybatisPageHelper;
 import com.misaki.core.page.PageRequest;
 import com.misaki.core.page.PageResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SysLogServiceImpl  implements SysLogService {
@@ -26,7 +25,6 @@ public class SysLogServiceImpl  implements SysLogService {
 		return sysLogMapper.updateByPrimaryKeySelective(record);
 	}
 
-	@Override
 	public int delete(SysLog record) {
 		return sysLogMapper.deleteByPrimaryKey(record.getId());
 	}
@@ -49,7 +47,6 @@ public class SysLogServiceImpl  implements SysLogService {
 		return null;
 	}
 
-	@Override
 	public SysLog findById(Long id) {
 		return sysLogMapper.selectByPrimaryKey(id);
 	}

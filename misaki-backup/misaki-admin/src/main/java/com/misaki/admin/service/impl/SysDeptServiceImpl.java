@@ -1,22 +1,21 @@
 package com.misaki.admin.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.misaki.admin.dao.SysDeptMapper;
 import com.misaki.admin.model.SysDept;
 import com.misaki.admin.service.SysDeptService;
 import com.misaki.core.page.MybatisPageHelper;
 import com.misaki.core.page.PageRequest;
 import com.misaki.core.page.PageResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class SysDeptServiceImpl implements SysDeptService {
 
-	@Autowired(required = false)
+	@Autowired
 	private SysDeptMapper sysDeptMapper;
 
 	@Override
@@ -27,7 +26,6 @@ public class SysDeptServiceImpl implements SysDeptService {
 		return sysDeptMapper.updateByPrimaryKeySelective(record);
 	}
 
-	@Override
 	public int delete(SysDept record) {
 		return sysDeptMapper.deleteByPrimaryKey(record.getId());
 	}

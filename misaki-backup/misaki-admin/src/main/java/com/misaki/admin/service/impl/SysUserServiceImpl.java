@@ -66,7 +66,6 @@ public class SysUserServiceImpl  implements SysUserService {
 		return 1;
 	}
 
-	@Override
 	public int delete(SysUser record) {
 		return sysUserMapper.deleteByPrimaryKey(record.getId());
 	}
@@ -89,7 +88,6 @@ public class SysUserServiceImpl  implements SysUserService {
 		return null;
 	}
 
-	@Override
 	public SysUser findById(Long id) {
 		return sysUserMapper.selectByPrimaryKey(id);
 	}

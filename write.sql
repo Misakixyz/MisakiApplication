@@ -1,4 +1,4 @@
-CREATE TABLE sys_user (
+CREATE TABLE IF NOT EXISTS sys_user (
     id bigint(20) not null auto_increment comment '编号',
     name varchar(50) not null comment '用户名',
     nick_name varchar(150) default null comment '昵称',
@@ -16,9 +16,9 @@ CREATE TABLE sys_user (
     del_flag tinyint(4) default '0' comment '是否删除  -1:已删除  0:正常',
     primary key (id),
     unique key name(name)
-)engine = InnoDB AUTO_INCREMENT=34 default CHARSET=utf8 comment='用户管理'; */
+)engine = InnoDB AUTO_INCREMENT=34 default CHARSET=utf8 comment='用户管理'; 
 
-/* create table sys_role (
+CREATE TABLE IF NOT EXISTS sys_role (
     id bigint(20) not null auto_increment comment '编号',
     name varchar(50) not null comment '角色名称',
     remark varchar(100) default null comment '备注',
@@ -28,9 +28,9 @@ CREATE TABLE sys_user (
     last_update_time datetime default null comment '更新时间',
     del_flag tinyint(4) default '0' comment '是否删除  -1:已删除  0:正常',
     primary key (id)
-) engine = InnoDB AUTO_INCREMENT=9 default CHARSET=utf8 comment ='角色管理'; */
+) engine = InnoDB AUTO_INCREMENT=9 default CHARSET=utf8 comment ='角色管理';
 
-/* create table sys_dept(
+CREATE TABLE IF NOT EXISTS sys_dept(
     id bigint(20) not null auto_increment comment '编号',
     name varchar(50) not null comment '机构名称',
     parent_id bigint(20) default null comment '上级机构ID,一级机构为0',
@@ -41,9 +41,9 @@ CREATE TABLE sys_user (
     last_update_time datetime default null comment '更新时间',
     del_flag tinyint(4) default '0' comment '是否删除  -1:已删除  0:正常',
     primary key (id)
-)engine = InnoDB AUTO_INCREMENT=36 default CHARSET=utf8 comment ='机构管理'; */
+)engine = InnoDB AUTO_INCREMENT=36 default CHARSET=utf8 comment ='机构管理';
 
-/* create table sys_menu(
+CREATE TABLE IF NOT EXISTS sys_menu(
     id bigint(20) not null auto_increment comment '编号',
     name varchar(50) not null comment '菜单名称',
     parent_id bigint(20) default null comment '父菜单ID,一级菜单为0',
@@ -58,9 +58,9 @@ CREATE TABLE sys_user (
     last_update_time datetime default null comment '更新时间',
     del_flag tinyint(4) default '0' comment '是否删除  -1:已删除  0:正常',
     primary key (id)
-)engine = InnoDB AUTO_INCREMENT=45 default CHARSET=utf8 comment ='菜单管理'; */
+)engine = InnoDB AUTO_INCREMENT=45 default CHARSET=utf8 comment ='菜单管理';
 
-/* create table sys_user_role (
+CREATE TABLE IF NOT EXISTS sys_user_role (
     id bigint(20) not null auto_increment comment '编号',
     user_id bigint(20) not null comment '用户ID',
     role_id bigint(20) not null comment '角色ID',
@@ -71,7 +71,7 @@ CREATE TABLE sys_user (
     primary key (id)
 ) engine = InnoDB AUTO_INCREMENT=76 default CHARSET=utf8 comment ='用户角色';
 
-create table sys_role_menu (
+CREATE TABLE IF NOT EXISTS sys_role_menu (
     id bigint(20) not null auto_increment comment '编号',
     role_id bigint(20) not null comment '角色ID',
     menu_id bigint(20) not null comment '菜单ID',
@@ -82,7 +82,7 @@ create table sys_role_menu (
     primary key (id)
 ) engine = InnoDB AUTO_INCREMENT=469 default CHARSET=utf8 comment ='角色菜单';
 
-create table sys_role_dept(
+CREATE TABLE IF NOT EXISTS sys_role_dept(
     id bigint(20) not null auto_increment comment '编号',
     role_id bigint(20) not null comment '角色ID',
     dept_id bigint(20) not null comment '机构ID',
@@ -93,7 +93,7 @@ create table sys_role_dept(
     primary key (id)
 ) engine = InnoDB AUTO_INCREMENT=4 default CHARSET=utf8 comment ='角色机构';
 
-create table sys_dict(
+CREATE TABLE IF NOT EXISTS sys_dict(
     id bigint(20) not null auto_increment comment '编号',
     value varchar(100) not null comment '数据值',
     label varchar(100) default null comment '标签名',
@@ -110,7 +110,7 @@ create table sys_dict(
 )engine = InnoDB AUTO_INCREMENT=5 default CHARSET=utf8 comment ='字典表';
 
 
-create table sys_config(
+CREATE TABLE IF NOT EXISTS sys_config(
     id bigint(20) not null auto_increment comment '编号',
     value varchar(100) not null comment '数据值',
     label varchar(100) default null comment '标签名',
@@ -126,7 +126,7 @@ create table sys_config(
     primary key (id)
 )engine = InnoDB AUTO_INCREMENT=5 default CHARSET=utf8 comment ='系统配置表';
 
-create table sys_log(
+CREATE TABLE IF NOT EXISTS sys_log(
     id bigint(20) not null auto_increment comment '编号',
     user_name varchar(50) not null comment '用户名',
     operation varchar(50) default null comment '用户操作',
@@ -141,7 +141,7 @@ create table sys_log(
     primary key (id)
 )engine = InnoDB AUTO_INCREMENT=2798 default CHARSET=utf8 comment ='系统操作日志';
 
-create table sys_login_log(
+CREATE TABLE IF NOT EXISTS sys_login_log(
     id bigint(20) not null auto_increment comment '编号',
     user_name varchar(50) not null comment '用户名',
     status varchar(50) default null comment '登录状态',

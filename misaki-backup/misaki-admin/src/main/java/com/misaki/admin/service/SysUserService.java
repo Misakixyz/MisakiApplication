@@ -16,11 +16,8 @@ import java.util.Set;
  */
 public interface SysUserService extends CurdService<SysUser> {
 
-    int delete(SysUser record);
 
-    SysUser findById(Long id);
-
-    SysUser findByName(String username);
+	SysUser findByName(String username);
 
 	/**
 	 * 查找用户的菜单权限标识集合
@@ -31,7 +28,7 @@ public interface SysUserService extends CurdService<SysUser> {
 
 	/**
 	 * 查找用户的角色集合
-	 * @param userName
+	 * @param userId
 	 * @return
 	 */
 	List<SysUserRole> findUserRoles(Long userId);
@@ -43,4 +40,5 @@ public interface SysUserService extends CurdService<SysUser> {
 	 */
 	File createUserExcelFile(PageRequest pageRequest);
 
+	SysUser findById(Long id);
 }

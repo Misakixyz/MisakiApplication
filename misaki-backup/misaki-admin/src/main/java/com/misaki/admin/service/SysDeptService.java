@@ -12,13 +12,11 @@ import java.util.List;
  */
 public interface SysDeptService extends CurdService<SysDept> {
 
-    int delete(SysDept record);
 
 	SysDept findById(Long id);
 
 	/**
 	 * 查询机构树
-	 * @param userId 
 	 * @return
 	 */
 	List<SysDept> findTree();
