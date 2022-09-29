@@ -27,3 +27,6 @@ swagger3 默认访问网址
     - encode-password, can not insert record into mysql database, this cause insert-password is not encode compare worrid
 2. miaski-pom
     - pom =>  add `<paking>pom</paking>`
+
+3. misaki-monitor
+
