@@ -29,4 +29,8 @@ swagger3 默认访问网址
     - pom =>  add `<paking>pom</paking>`
 
 3. misaki-monitor
+    - spring boot admin 与spring boot 版本一致
+    - 报错： Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+        - save：spring.boot.admin.client.url=http://localhost:8000  
+        - save：management.endpoints.web.exposure.include=*
 
