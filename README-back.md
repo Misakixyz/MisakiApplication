@@ -34,3 +34,11 @@ swagger3 默认访问网址
         - save：spring.boot.admin.client.url=http://localhost:8000  
         - save：management.endpoints.web.exposure.include=*
 
+    - 从此采用springdoc 1.4.0来集成swagger3，
+        - 路路径使用 spring.mvc.pathmatch.matching-strategy=ANT_PATH_MATCHER
+        - 网址使用 /swagger-ui.html 进入v3
+        - 网址使用 /swagger-ui/index.html 进入v2
+    - monitor实例离线
+        · 解决方法：确定instance.service->spring.boot.admin.client.instance.service-url=http://localhost:8002
+
+
