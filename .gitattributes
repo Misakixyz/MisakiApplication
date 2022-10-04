@@ -1,1 +1,2 @@
 file filter=lfs diff=lfs merge=lfs -text
+tool/consul_1.13.2_windows_amd64/consul.exe filter=lfs diff=lfs merge=lfs -text
