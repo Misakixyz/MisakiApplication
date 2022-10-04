@@ -9,10 +9,13 @@ mysql 8.0.27
 
 dependencies
 workbook 4.1.1
+spring cloud 2021.0.3
+
 ## NOTE
 mysql :testDB -root -123456
-swagger3 默认访问网址  
-`http://localhost:8080/swagger-ui/index.html`
+springdoc swagger3 默认访问网址  
+`http://localhost:8080/swagger-ui.html`
+
 1. misaki-admin
     - application.properties can't work
     - pom => use `<paking>jar</paking>`
