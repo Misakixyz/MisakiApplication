@@ -43,5 +43,15 @@ springdoc swagger3 默认访问网址
         - 网址使用 /swagger-ui/index.html 进入v2
     - monitor实例离线
         · 解决方法：确定instance.service->spring.boot.admin.client.instance.service-url=http://localhost:8002
+3.misaki-consumer
+    - 熔断器无法使用 
+        - 导入netflix即可  
+            ```
+            <dependency>
+			    <groupId>org.springframework.cloud</groupId>
+			    <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			    <version>2.2.9.RELEASE</version>
+		    </dependency>
+            ```
 
 
