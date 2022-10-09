@@ -55,6 +55,35 @@
 <!--			<version>2.3.12.RELEASE</version>-->
 		</dependency>
 
+		<!--		netflix-hystix-dashboard-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+			<version>2.2.9.RELEASE</version>
+		</dependency>
+
+<!--		turbine-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-netflix-hystrix-turbine</artifactId>-->
+<!--&lt;!&ndash;			<version>2.2.6.RELEASE</version>&ndash;&gt;-->
+<!--			<type>pom</type>-->
+<!--			<scope>import</scope>-->
+<!--			<exclusions>-->
+<!--&lt;!&ndash;				no eureka&ndash;&gt;-->
+<!--				<exclusion>-->
+<!--					<groupId>org.springframework.cloud</groupId>-->
+<!--					<artifactId>pring-cloud-starter-netflix-eureka-client</artifactId>-->
+<!--				</exclusion>-->
+<!--			</exclusions>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-netflix-turbine</artifactId>
+			<version>2.2.9.RELEASE</version>
+
+		</dependency>
+
 	</dependencies>
 
 
