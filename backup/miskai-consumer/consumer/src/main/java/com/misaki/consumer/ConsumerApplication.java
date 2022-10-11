@@ -17,6 +17,7 @@ import javax.servlet.ServletRegistration;
 
 //@SpringCloudApplication
 //@EnableCircuitBreaker
+
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication

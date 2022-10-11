@@ -53,5 +53,14 @@ springdoc swagger3 默认访问网址
 			    <version>2.2.9.RELEASE</version>
 		    </dependency>
             ```
+4.zipkin
+    - problem:
+    ```
+    Failed to create node environment
+    Caused by: java.nio.file.AccessDeniedException: /usr/share/elasticsearch/data/nodes
+    ```
+        - save:在docker-compose.yml中elasticsearch配置下
+            - volumes使用/elasticsearch
+            - 且在ubuntu-wsl中chmod 777 /elasticsearch/data
 
 
