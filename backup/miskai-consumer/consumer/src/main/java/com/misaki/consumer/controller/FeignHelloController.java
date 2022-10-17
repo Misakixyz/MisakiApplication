@@ -1,5 +1,6 @@
 package com.misaki.consumer.controller;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,7 +9,7 @@ public class FeignHelloController {
 
     private MisakiProducerService misakiProducerService;
 
-    public FeignHelloController(MisakiProducerService misakiProducerService) {
+    public FeignHelloController(@Qualifier("com.misaki.consumer.controller.MisakiProducerService") MisakiProducerService misakiProducerService) {
         this.misakiProducerService = misakiProducerService;
     }
 

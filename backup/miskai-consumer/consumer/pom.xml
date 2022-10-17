@@ -95,6 +95,30 @@
 		</dependency>
 
 
+<!--		spring-cloud-config- starter server-->
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+<!--			<version></version>-->
+		</dependency>
+
+
+<!--		bootstrap-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+<!--			<version></version>-->
+		</dependency>
+
+<!--		bus amqp-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+<!--			<version></version>-->
+		</dependency>
+
+
 
 	</dependencies>
 
